@@ -1,0 +1,8 @@
+torch
+transformers
+soundfile
+scipy
+scikit-learn
+pandas
+matplotlib
+seaborn
