@@ -30,7 +30,7 @@ Tracking physical movement requires more than just minimizing coordinate distanc
 4. **CCC Loss (0.5):** Uses the Concordance Correlation Coefficient to maximize the morphological shape agreement between the predicted and true trajectories.
 
 ## Project Structure
-
+```
 a2a-inversion/
 ├── requirements.txt           # Python dependencies
 ├── utils/
@@ -52,18 +52,21 @@ a2a-inversion/
 │   ├── train.py               # Early-stopping and plateau-based learning rate scheduling
 │   └── plotting.py            # Hexbin densities, CDFs, and trajectory visualization
 └── main.py                    # Master execution orchestrator for end-to-end runs
+```
 Installation
 Clone the repository:
 
-Bash
+```Bash
 git clone [https://github.com/yourusername/Self-Supervised-Speech-Representations-and-Residual-TCNs-for-Subspace-Compressed-Articulatory-Inv.git](https://github.com/yourusername/Self-Supervised-Speech-Representations-and-Residual-TCNs-for-Subspace-Compressed-Articulatory-Inv.git)
 cd Self-Supervised-Speech-Representations-and-Residual-TCNs-for-Subspace-Compressed-Articulatory-Inv
+```
 Create a virtual environment and install dependencies:
 
-Bash
+``` Bash
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 pip install -r requirements.txt
+```
 Note: Feature extraction relies on HuggingFace's WavLM-Large. A CUDA-enabled GPU with at least 8GB VRAM is highly recommended.
 
 Usage
@@ -71,8 +74,9 @@ The entire pipeline—from raw data ingestion, feature extraction, 12D baseline 
 
 Place your .npz dataset files (e.g., mocha_baseline_12D.npz) anywhere in the working directory, and run:
 
-Bash
+```Bash
 python main.py
+```
 What happens under the hood?
 Dynamic Resampling: Raw audio is resampled to 16kHz for WavLM. High-speed EMA data (e.g., 500Hz for MOCHA) is carefully downsampled to 50Hz to align perfectly with the transformer's acoustic output frames.
 
